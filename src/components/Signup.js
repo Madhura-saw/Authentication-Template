@@ -25,14 +25,13 @@ const Signup = () => {
         // Signed in
         const user = userCredential.user;
         console.log(user);
-        // alert("Signed up successfully");
         toast("Signed up successfully");
       })
       .catch((error) => {
         const errorCode = error.code;
-        alert(errorCode);
-        // const errorMessage = error.message;
-        // ..
+        // alert(errorCode);
+        const errorMessage = error.message;
+        toast(errorMessage);
       });
     setName("");
     setEmail("");
@@ -55,19 +54,14 @@ const Signup = () => {
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
-        // ...
         toast("Sign up with Google successful");
       })
       .catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;
-        alert(errorCode);
-        // const errorMessage = error.message;
-        // // The email of the user's account used.
-        // const email = error.customData.email;
-        // // The AuthCredential type that was used.
-        // const credential = GoogleAuthProvider.credentialFromError(error);
-        // ...
+        // alert(errorCode);
+        const errorMessage = error.message;
+        toast(errorMessage);
       });
   };
 

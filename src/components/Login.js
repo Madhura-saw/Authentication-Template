@@ -24,12 +24,12 @@ const Login = () => {
         const user = userCredential.user;
         console.log(user);
         toast("Logged in successfully");
-        // ...
       })
       .catch((error) => {
         const errorCode = error.code;
-        // const errorMessage = error.message;
-        alert(errorCode);
+        // alert(errorCode);
+        const errorMessage = error.message;
+        toast(errorMessage);
       });
   };
 
@@ -48,13 +48,9 @@ const Login = () => {
       .catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;
-        alert(errorCode);
-        // const errorMessage = error.message;
-        // // The email of the user's account used.
-        // const email = error.customData.email;
-        // // The AuthCredential type that was used.
-        // const credential = GoogleAuthProvider.credentialFromError(error);
-        // ...
+        // alert(errorCode);
+        const errorMessage = error.message;
+        toast(errorMessage);
       });
   };
 
@@ -62,13 +58,12 @@ const Login = () => {
     sendPasswordResetEmail(auth, email)
       .then(() => {
         // Password reset email sent!
-        toast("Password reset email sent!")
+        toast("Password reset email sent!");
       })
       .catch((error) => {
         // const errorCode = error.code;
         const errorMessage = error.message;
-        alert(errorMessage)
-        // ..
+        toast(errorMessage);
       });
   };
 
@@ -116,17 +111,17 @@ const Login = () => {
           </div>
         </div>
         <ToastContainer
-position="top-center"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="dark"
-/>
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
 
         {/* <!-- Submit button --> */}
         <button
@@ -137,17 +132,17 @@ theme="dark"
           Login
         </button>
         <ToastContainer
-position="top-center"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="dark"
-/>
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
         {/* <!-- Register buttons --> */}
         <div class="text-center">
           <p>
@@ -170,17 +165,17 @@ theme="dark"
             </span>
           </button>
           <ToastContainer
-position="top-center"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="dark"
-/>
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+          />
         </div>
       </div>
     </div>

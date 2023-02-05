@@ -16,8 +16,8 @@ const Navbar = () => {
       .catch((error) => {
         // An error happened.
         const errorCode = error.code;
-        // const errorMessage = error.message;
-        alert(errorCode);
+        const errorMessage = error.message;
+        toast(errorMessage);
       });
   };
 
